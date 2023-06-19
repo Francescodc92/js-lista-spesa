@@ -21,11 +21,12 @@ const shoppingList = [
 
 const shoppingListElement = document.getElementById("shopping-list")
 
-let i = 0
-while (i < shoppingList.length) {
-  shoppingListElement.append(createHtmlElement(shoppingList[i]))
-
-  i++
+function addElementToHtml() {
+  let i = 0
+  while (i < shoppingList.length) {
+    shoppingListElement.append(createHtmlElement(shoppingList[i]))
+    i++
+  }
 }
 
 function createHtmlElement(currentListElement) {
@@ -33,3 +34,5 @@ function createHtmlElement(currentListElement) {
   liElement.innerHTML = currentListElement
   return liElement
 }
+
+addElementToHtml()

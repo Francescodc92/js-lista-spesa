@@ -6,10 +6,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-:root {
-  font-size: 62.5%;
+ul#shopping-list li {
+  margin-left: 0.625rem;
+  font-size: 1.25rem;
 }
 
-body {
-  font-size: 1.6rem;
+form {
+  max-width: 25rem;
+  margin-inline: auto;
 }
