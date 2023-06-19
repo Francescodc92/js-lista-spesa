@@ -19,8 +19,17 @@ const shoppingList = [
   "dentifricio",
 ]
 
+const shoppingListElement = document.getElementById("shopping-list")
+
 let i = 0
 while (i < shoppingList.length) {
-  console.log(shoppingList[i])
+  shoppingListElement.append(createHtmlElement(shoppingList[i]))
+
   i++
+}
+
+function createHtmlElement(currentListElement) {
+  const liElement = document.createElement("li")
+  liElement.innerHTML = currentListElement
+  return liElement
 }
