@@ -20,19 +20,30 @@ const shoppingList = [
 ]
 
 const shoppingListElement = document.getElementById("shopping-list")
+const formElement = document.getElementById("form")
 
 function addElementToHtml() {
+  shoppingListElement.innerHTML = ""
   let i = 0
   while (i < shoppingList.length) {
-    shoppingListElement.append(createHtmlElement(shoppingList[i]))
+    shoppingListElement.append(createHtmlElement(i, shoppingList[i]))
     i++
   }
 }
 
-function createHtmlElement(currentListElement) {
+function createHtmlElement(index, currentListElement) {
+  const indexhtml = index + 1
   const liElement = document.createElement("li")
-  liElement.innerHTML = currentListElement
+  liElement.innerHTML = indexhtml + "." + " " + currentListElement
   return liElement
 }
+
+formElement.addEventListener("submit", (e) => {
+  e.preventDefault()
+  const inputNewElement = document.getElementById("add-list-element")
+  const valueNewElement = inputNewElement.value
+  shoppingList.push(valueNewElement)
+  addElementToHtml()
+})
 
 addElementToHtml()
